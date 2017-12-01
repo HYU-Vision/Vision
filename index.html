@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Speech to Text</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+  <script>
+    var recognition = new webkitSpeechRecognition();
+    recognition.continuous = true;
+    // recognition.interimResults = true;
+    recognition.lang = "ko-KR";
+    recognition.onresult = function(event) {
+      var sentence = event.results[event.results.length-1][0].transcript;
+      var url = 'https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bf6165ab-4fb5-40b3-9248-e931a19720f3?subscription-key=f270af07554746759f8a664985c04a85&verbose=true&timezoneOffset=0&q=';
+      console.log(sentence);
+      console.log(url+sentence);
+
+      $.ajax({
+        url: url + encodeURIComponent(sentence),
+        success: function(res) {
+          console.log(res);
+          res.entities.forEach(function(item) {
+            console.log(item.query);
+          })
+        }
+      })
+    }
+    recognition.start();
+  </script>
+</head>
+<body>
+
+</body>
+</html>
