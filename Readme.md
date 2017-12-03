@@ -15,3 +15,6 @@ $ python -m SimpleHTTPServer
 ## Libraries
  * jquery
  * siriwave
+
+## APIs
+ * [Microsoft LUIS api](https://luis.ai)
