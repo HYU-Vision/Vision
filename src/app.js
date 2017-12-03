@@ -5,6 +5,7 @@ var SW = new SiriWave({
 	amplitude: 0,
 	container: document.getElementById('siri-container'),
 	autostart: true,
+  style: 'ios9'
 });
 
 $(function() {

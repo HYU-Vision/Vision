@@ -20,6 +20,10 @@ html, body {
   color: #336699;
 }
 
+.intent {
+  text-align: center;
+}
+
 #myChart {
   width: 100px !important;
   height: 100px !important;

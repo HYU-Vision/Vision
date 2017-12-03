@@ -19,8 +19,29 @@ recognition.onresult = function(event) {
     success: function(res) {
       console.log('succes');
       console.log(res);
+
       console.log(res.entities);
       console.log(res.query);
+
+
+      switch (res.topScoringIntent.intent) {
+        case "Special Location":
+          $('.intent').text("한양대학교에 대한 문장입니다.");
+          break;
+        case "Subway Station":
+          $('.intent').text("지하철역 검색에 대한 문장입니다.");
+          break;
+        case "About Prof":
+          $('.intent').text("교수님 검색에 대한 문장입니다.");
+          break;
+        case "Location":
+          $('.intent').text("장소 검색에 대한 문장입니다.");
+          break;
+        case "Search":
+          $('.intent').text("일반 검색에 대한 문장입니다.");
+          break;
+      }
+      $('.intent').append("<br/>"+"("+(res.topScoringIntent.score*100).toFixed(2)+"%)")
       if (res.entities.length === 0) {
         $('.text').addClass('fadeInUp');
         $('.text').text(sentence);
