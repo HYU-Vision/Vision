@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+  background: #1b1b1b;
+}
+
+.main {
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  text-align: center;
+}
+
+.highlight {
+  color: #336699;
+}
+
+#myChart {
+  width: 100px !important;
+  height: 100px !important;
+}
