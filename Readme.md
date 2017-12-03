@@ -1,7 +1,8 @@
 # Vision Client
 
-**Usage**
+## Usage
 
+**On MacOS**
 ```shell
 $ python -m SimpleHTTPServer
 ```
